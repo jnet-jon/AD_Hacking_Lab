@@ -63,6 +63,7 @@ module "windows_servers" {
   vnet_subnet_id      = data.azurerm_subnet.LabSubnet.id
   vm_size             = "Standard_B2ms"
   nb_instances        = "2"
+  nb_public_ip        = "0"
 
 }
 
@@ -78,4 +79,5 @@ module "windows_desktops" {
   vnet_subnet_id      = data.azurerm_subnet.LabSubnet.id
   vm_size             = "Standard_B2ms"
   nb_instances        = "2"
+  nb_public_ip        = "0"
 }
