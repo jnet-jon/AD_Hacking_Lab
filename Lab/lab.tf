@@ -55,6 +55,7 @@ output "subnet_id" {
 module "windows_servers" {
   source              = "Azure/compute/azurerm"
   resource_group_name = data.azurerm_resource_group.LabRG.name
+  is_windows_image    = true
   vm_hostname         = var.vm_srv_hostname
   admin_password      = var.admin_passwd
   vm_os_sku           = "2019-datacenter"
