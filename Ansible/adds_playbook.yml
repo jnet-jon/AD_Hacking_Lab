@@ -1,0 +1,10 @@
+---
+- hosts: adds
+  gather_facts: no
+  roles:
+   - win_adds_join
+   - win_server_onboard
+  vars_files:
+   - group_vars/variables.yml
+   - group_vars/passwords.yml
+

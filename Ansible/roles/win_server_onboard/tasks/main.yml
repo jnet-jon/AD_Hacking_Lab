@@ -1,0 +1,15 @@
+- name: Install Anti-Virus Client
+  win_package:
+    path: \\vpr1av1\serverclients\SEP_ 12.1.7369.6900_Default_Server_setting.exe
+    product_id: '{B4DC1A28-5CD5-4EF6-983F-7A5FC1C7B487}'
+    user_name: "{{ adds_username }}"
+    password: "{{ adds_password }}"
+    state: present
+
+- name: Install LAPS agent from msi
+  win_package: 
+    path: https://download.microsoft.com/download/C/7/A/C7AAD914-A8A6-4904-88A1-29E657445D03/LAPS.x64.msi
+    product_id: '{F53D26E0-94E5-456F-AC72-C7676C9CE813}'
+    user_name: "{{ adds_username }}"
+    password: "{{ adds_password }}"
+    state: present

@@ -1,0 +1,21 @@
+- name: Ensure DNS pointers to internal DNS
+  win_dns_client:
+    adapter_names: '*'
+    ipv4_addresses: "{{ adds_dnsaddr }}"
+
+- name: Join target machine to domain
+  win_domain_membership:
+    dns_domain_name: "{{ adds_domain_name }}"
+    domain_admin_user: "{{ adds_ad_domadmin }}"
+    domain_admin_password: "{{ adds_ad_dompass }}"
+    state: domain
+  register: domain_state
+
+- name: Reboot if required
+  win_reboot: 
+  when: domain_state.reboot_required
+
+- name: Change TimeZone
+  win_timezone:
+    timezone: Eastern Standard Time
+    register: time

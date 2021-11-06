@@ -1,0 +1,6 @@
+- name: Install DHCP Service
+  win_feature: 
+    name: DHCP
+    state: present
+    include_management_tools: no
+  register: dhcp_installed

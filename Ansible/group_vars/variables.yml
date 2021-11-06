@@ -1,0 +1,6 @@
+# Variables for ADDS
+adds_domain_name: hacking.lab
+adds_dnsaddr: 
+- 10.193.172.5
+adds_ad_domadmin: admin@hacking.lab
+adds_ad_dompass: hacker123!
