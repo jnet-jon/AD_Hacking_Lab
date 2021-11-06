@@ -82,3 +82,16 @@ module "windows_desktops" {
   nb_instances        = "2"
   nb_public_ip        = "0"
 }
+module "linuxservers" {
+  source              = "Azure/compute/azurerm"
+  resource_group_name = data.azurerm_resource_group.LabRG.name
+  vm_os_simple        = "UbuntuServer"
+  vm_hostname         = "ansible"
+  vm_size             = "Standard_B1s"
+  admin_username      = "ansible"
+  admin_password      = "ansible"
+  vnet_subnet_id      = data.azurerm_subnet.LabSubnet.id
+  nb_public_ip        = "0"
+
+
+}
