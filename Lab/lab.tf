@@ -90,6 +90,7 @@ module "linuxservers" {
   vm_size             = "Standard_B1s"
   admin_username      = "ansible"
   admin_password      = "ansible"
+  enable_ssh_key      = false
   vnet_subnet_id      = data.azurerm_subnet.LabSubnet.id
   nb_public_ip        = "0"
 
