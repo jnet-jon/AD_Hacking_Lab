@@ -3,9 +3,9 @@ variable "admin_passwd" {
 }
 
 variable "vm_srv_hostname" {
-  default = "DC-"
+  default = "DC"
 }
 
 variable "vm_vdi_hostname" {
-  default = "VDI-"
+  default = "VDI"
 }
